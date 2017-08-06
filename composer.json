@@ -1,0 +1,25 @@
+{
+  "name": "bongrun/curl-adapter",
+  "description": "Обработка очередей",
+  "keywords": ["bongrun", "curl" ],
+  "homepage": "https://github.com/bongrun/curl-adapter",
+  "type": "project",
+  "license": "Apache License 2.0",
+  "support": {
+    "issues": "https://github.com/bongrun/curl-adapter/issues?state=open",
+    "source": "https://github.com/bongrun/curl-adapter"
+  },
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=7.0",
+    "guzzlehttp/guzzle": "~6.0",
+    "imangazaliev/didom": "1.9.*",
+    "bongrun/proxy-adapter": "*"
+  },
+  "config": {
+    "process-timeout": 1800
+  },
+  "autoload": {
+    "psr-4": {"bongrun\\": "src/"}
+  }
+}
