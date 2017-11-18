@@ -11,14 +11,14 @@ use GuzzleHttp\Psr7\Response;
 use GuzzleHttp\Psr7\Uri;
 use GuzzleHttp\RedirectMiddleware;
 use GuzzleHttp\TransferStats;
-use model\ProxyInterface;
+use interfaces\ProxyDataInterface;
 use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\UriInterface;
 
 class CurlAdapter
 {
-    /** @var ProxyInterface */
+    /** @var ProxyDataInterface */
     private $proxy;
 
     private $userAgent;
@@ -56,11 +56,10 @@ class CurlAdapter
     }
 
     /**
-     * @param ProxyInterface $proxy
-     *
+     * @param ProxyDataInterface $proxy
      * @return $this
      */
-    public function setProxy(ProxyInterface $proxy)
+    public function setProxy(ProxyDataInterface $proxy)
     {
         $this->proxy = $proxy;
         return $this;
@@ -212,7 +211,7 @@ class CurlAdapter
     protected function getOptionsDefault()
     {
         $options = [];
-        if ($this->proxy instanceof Proxy && $this->proxy->ip && $this->proxy->port) {
+        if ($this->proxy instanceof ProxyDataInterface && $this->proxy->getIp() && $this->proxy->getPort()) {
             $options['proxy'] = 'http://' . $this->proxy->getString();
         }
         $options['headers'] = [
