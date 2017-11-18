@@ -13,8 +13,7 @@
   "require": {
     "php": ">=7.0",
     "guzzlehttp/guzzle": "~6.0",
-    "imangazaliev/didom": "1.9.*",
-    "bongrun/proxy-adapter": "*"
+    "imangazaliev/didom": "1.9.*"
   },
   "config": {
     "process-timeout": 1800
