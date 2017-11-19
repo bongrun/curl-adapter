@@ -1,6 +1,6 @@
 <?php
 
-namespace adapter;
+namespace bongrun\adapter;
 
 use DiDom\Document;
 use GuzzleHttp\Client;
