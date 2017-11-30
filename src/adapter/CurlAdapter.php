@@ -16,7 +16,11 @@ use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\UriInterface;
 
-class CurlAdapter
+/**
+ * Class CurlAdapter
+ * @package bongrun\adapter
+ */
+class CurlAdapter implements CurlAdapterInterface
 {
     /** @var ProxyDataInterface */
     private $proxy;
